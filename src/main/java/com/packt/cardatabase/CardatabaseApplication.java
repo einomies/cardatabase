@@ -13,6 +13,7 @@ public class CardatabaseApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CardatabaseApplication.class, args);
 		logger.info("Spring Boot Application started");
-		System.out.println("muutos 01 jeps");
+		System.out.println("muutos 01");
+		System.out.println("muutos 02");
 	}
 }
