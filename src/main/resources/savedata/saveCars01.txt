@@ -1,9 +1,11 @@
 Ford	Mustang	Red	ADF-1121	2017	59000
-Nissan	Leaf	White	SSJ-3002	2014	29000
 Toyota	Prius	Silver	KKO-0212	2018	39000
-Skoda	Superb	Purple	RSV-932	2011	10000
+Skoda	Superb	Gray	RSV-917	2010	9500
 Ford	Mondeo	Silver	ATG-456	2018	45000
 Fiat	Uno	Red	BHN-045	2007	900
 Kia	Sorento	Black	KTY-923	2017	35000
 #Volkswagen	Passat	Blue	JWE-708	2016	25000
+Nissan	Leaf	White	SSJ-3012	2014	29000
 Volkswagen	Passat	Brown	DFU-208	2017	28500
+Lada	Samara 1600	Green	WTF-632	2009	856
+Peugeot	5008	Silver	GKM-802	2017	31000
