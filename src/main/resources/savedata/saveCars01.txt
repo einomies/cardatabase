@@ -1,0 +1,4 @@
+Ford	Mustang	Red	ADF-1121	2017	59000
+Nissan	Leaf	White	SSJ-3002	2014	29000
+Toyota	Prius	Silver	KKO-0212	2018	39000
+Skoda	Superb	Purple	RSV-932	2011	10000
