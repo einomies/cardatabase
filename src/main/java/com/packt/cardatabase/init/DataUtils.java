@@ -10,18 +10,22 @@ import com.packt.cardatabase.domain.CarRepository;
 import com.packt.cardatabase.domain.Owner;
 import com.packt.cardatabase.domain.OwnerRepository;
 
-public class CarUtils {
+public class DataUtils {
 
-	public static void saveCars01(CarRepository carRepository, OwnerRepository ownerRepository) {
-		ArrayList<Car> cars = readCars01();
+	public static void saveCarsOwners01(CarRepository carRepository, OwnerRepository ownerRepository) {
+		ArrayList<Owner> owners = readOwners01();
+		for (Owner owner : owners) {
+			ownerRepository.save(owner);
+		}
+		ArrayList<Car> cars = readCars01(owners);
 		for (Car car : cars) {
 			carRepository.save(car);
 		}
 	}
 
-	private static ArrayList<Car> readCars01() {
+	private static ArrayList<Car> readCars01(ArrayList<Owner> owners) {
 		ArrayList<Car> cars = new ArrayList<>();
-		String fileName = "src\\main\\resources\\savedata\\saveCars01.txt";
+		String fileName = "src\\main\\resources\\savedata\\saveCarsOwners01.txt";
 		ArrayList<String> rivit = readStringData(fileName);
 		for (String rivi : rivit) {
 			if (!rivi.substring(0, 1).equals("#")) {
@@ -36,6 +40,9 @@ public class CarUtils {
 				}
 				if (isInteger(palat[5])) {
 					car.setPrice(Integer.parseInt(palat[5]));
+				}
+				if (isInteger(palat[6])) {
+					car.setOwner(owners.get(Integer.parseInt(palat[6]) - 1));
 				}
 				cars.add(car);
 			}
@@ -83,10 +90,10 @@ public class CarUtils {
 
 	private static ArrayList<Car> readCars02() {
 		ArrayList<Car> cars = new ArrayList<>();
-		cars.add(new Car("Ford", "Mustang", "Red", "ADF-1121", 2017, 59000, new Owner("John","Smith")));
-		cars.add(new Car("Nissan", "Leaf", "White", "SSJ-3002", 2014, 29000, new Owner("John","Smith")));
-		cars.add(new Car("Toyota", "Prius", "Silver", "KKO-0212", 2018, 39000, new Owner("John","Smith")));
-		cars.add(new Car("Skoda", "Superb", "Purple", "RSV-932", 2011, 10000, new Owner("John","Smith")));
+		cars.add(new Car("Ford", "Mustang", "Red", "ADF-1121", 2017, 59000, new Owner("John", "Smith")));
+		cars.add(new Car("Nissan", "Leaf", "White", "SSJ-3002", 2014, 29000, new Owner("John", "Smith")));
+		cars.add(new Car("Toyota", "Prius", "Silver", "KKO-0212", 2018, 39000, new Owner("John", "Smith")));
+		cars.add(new Car("Skoda", "Superb", "Purple", "RSV-932", 2011, 10000, new Owner("John", "Smith")));
 		return cars;
 	}
 }
