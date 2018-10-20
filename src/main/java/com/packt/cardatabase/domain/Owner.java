@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Owner {
 
@@ -17,17 +20,11 @@ public class Owner {
 	private long ownerid;
 
 	private String firstname, lastname;
-	
+
+//	@JsonBackReference
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+	@JsonIgnore
 	private List<Car> cars;
-
-	public List<Car> getCars() {
-		return cars;
-	}
-
-	public void setCars(List<Car> cars) {
-		this.cars = cars;
-	}
 
 	public Owner() {
 	}
@@ -60,6 +57,14 @@ public class Owner {
 
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
+	}
+
+	public List<Car> getCars() {
+		return cars;
+	}
+
+	public void setCars(List<Car> cars) {
+		this.cars = cars;
 	}
 
 }
