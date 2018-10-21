@@ -16,17 +16,17 @@ public class CarController {
 
 	@Autowired
 	private CarRepository carRepository;
-	
+
 	@RequestMapping("/cars")
 	public Iterable<Car> getCars() {
 		return carRepository.findAll();
 	}
-/*
+
 	@RequestMapping("/cars-by-brand")
-	public Iterable<Car> getCars(String brand) {
+	public Iterable<Car> getCarsByBrand(String brand) {
 		return carRepository.findByBrand(brand);
 	}
-*/
+
 	@RequestMapping("/dummy")
 	public Owner getDummyOwner() {
 		Owner owner = new Owner("David", "Dummy");
