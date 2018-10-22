@@ -2,14 +2,20 @@ package com.packt.cardatabase.domain;
 
 import java.util.List;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+@RepositoryRestResource
 public interface CarRepository extends CrudRepository<Car, Long> {
+	
+	// Fetch cars by brand
+	List<Car> findByBrand(@Param("brand") String brand);
 
+	// Fetch cars by color
+	List<Car> findByColor(@Param("color") String color);
+	
+	/*
 	// Fetch all cars
 	List<Car> findAll();
 
@@ -34,5 +40,6 @@ public interface CarRepository extends CrudRepository<Car, Long> {
 	// Fetch cars by brand ending with xxxxxx
 	@Query("select c from Car c where c.brand like %?1")
 	List<Car> findByBrandEndsWith(String brand);
+	*/
 
 }
