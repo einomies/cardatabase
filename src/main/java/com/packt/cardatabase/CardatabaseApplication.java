@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.packt.cardatabase.domain.CarRepository;
 import com.packt.cardatabase.domain.OwnerRepository;
+import com.packt.cardatabase.domain.UserRepository;
 
 @SpringBootApplication
 public class CardatabaseApplication {
@@ -21,6 +22,9 @@ public class CardatabaseApplication {
 
 	@Autowired
 	private OwnerRepository ownerRepository;
+
+	@Autowired
+	private UserRepository userRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CardatabaseApplication.class, args);
@@ -46,6 +50,7 @@ public class CardatabaseApplication {
 //			carRepository.save(car);
 
 			com.packt.cardatabase.init.DataUtils.saveCarsOwners01(carRepository, ownerRepository);
+			com.packt.cardatabase.init.DataUtils.saveUsers01(userRepository);
 		};
 	}
 

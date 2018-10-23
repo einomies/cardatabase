@@ -9,6 +9,8 @@ import com.packt.cardatabase.domain.Car;
 import com.packt.cardatabase.domain.CarRepository;
 import com.packt.cardatabase.domain.Owner;
 import com.packt.cardatabase.domain.OwnerRepository;
+import com.packt.cardatabase.domain.User;
+import com.packt.cardatabase.domain.UserRepository;
 
 public class DataUtils {
 
@@ -21,6 +23,14 @@ public class DataUtils {
 		for (Car car : cars) {
 			carRepository.save(car);
 		}
+	}
+
+	public static void saveUsers01(UserRepository userRepository) {
+//		User01
+		userRepository.save(new User("user", "$2a$10$lBdKVvzeWCHgdJC9GU0pmes11Szt53nXNBLmpQB3cVK5YB5FaoEam", "USER"));
+
+//		Admin01
+		userRepository.save(new User("admin", "$2a$10$er1HL4PHlabj5ilCNnt8XObORwYeGru2wXyZX7zmLoCWq/tlcMtam", "ADMIN"));
 	}
 
 	private static ArrayList<Car> readCars01(ArrayList<Owner> owners) {
@@ -96,4 +106,5 @@ public class DataUtils {
 		cars.add(new Car("Skoda", "Superb", "Purple", "RSV-932", 2011, 10000, new Owner("John", "Smith")));
 		return cars;
 	}
+
 }
