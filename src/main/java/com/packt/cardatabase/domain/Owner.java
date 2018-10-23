@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -65,6 +64,12 @@ public class Owner {
 
 	public void setCars(List<Car> cars) {
 		this.cars = cars;
+	}
+
+	@Override
+	public String toString() {
+		return "Owner [ownerid=" + ownerid + ", firstname=" + firstname + ", lastname=" + lastname + ", cars=" + cars
+				+ "]";
 	}
 
 }
