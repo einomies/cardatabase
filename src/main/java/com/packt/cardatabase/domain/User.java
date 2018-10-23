@@ -8,7 +8,7 @@ import javax.persistence.Id;
 
 @Entity
 public class User {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false, updatable = false)
@@ -22,6 +22,9 @@ public class User {
 
 	@Column(nullable = false)
 	private String role;
+
+	public User() {
+	}
 
 	public User(String username, String password, String role) {
 		super();
