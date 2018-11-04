@@ -9,6 +9,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface CarRepository extends CrudRepository<Car, Long> {
 	
+	// Fetch all cars
+	List<Car> findAll();
+
 	// Fetch cars by brand
 	List<Car> findByBrand(@Param("brand") String brand);
 
@@ -16,9 +19,6 @@ public interface CarRepository extends CrudRepository<Car, Long> {
 	List<Car> findByColor(@Param("color") String color);
 	
 	/*
-	// Fetch all cars
-	List<Car> findAll();
-
 	// Fetch cars by brand
 	List<Car> findByBrand(String brand);
 

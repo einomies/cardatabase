@@ -26,13 +26,12 @@ public class DataUtils {
 	}
 
 	public static void saveUsers01(UserRepository userRepository) {
-//		User01
-		userRepository.save(new User("user", "$2a$10$lBdKVvzeWCHgdJC9GU0pmes11Szt53nXNBLmpQB3cVK5YB5FaoEam", "USER"));
-
-//		Admin01
-		userRepository.save(new User("admin", "$2a$10$er1HL4PHlabj5ilCNnt8XObORwYeGru2wXyZX7zmLoCWq/tlcMtam", "ADMIN"));
+		// username: user password: user
+		userRepository.save(new User("user", "$2a$04$1.YhMIgNX/8TkCKGFUONWO1waedKhQ5KrnB30fl0Q01QKqmzLf.Zi", "USER"));
+		// username: admin password: admin
+		userRepository.save(new User("admin", "$2a$04$KNLUwOWHVQZVpXyMBNc7JOzbLiBjb9Tk9bP7KNcPI12ICuvzXQQKG", "ADMIN"));
 	}
-
+	
 	private static ArrayList<Car> readCars01(ArrayList<Owner> owners) {
 		ArrayList<Car> cars = new ArrayList<>();
 		String fileName = "src\\main\\resources\\savedata\\saveCarsOwners01.txt";
