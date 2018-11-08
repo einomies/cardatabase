@@ -19,14 +19,24 @@ public class Car {
 
 	private String brand, model, color, registerNumber;
 	private int year, price;
-	
+
 //	@JsonManagedReference
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "owner")
 	private Owner owner;
 
 	public Car() {
+	}
+
+	public Car(String brand, String model, String color, String registerNumber, int year, int price) {
+		super();
+		this.brand = brand;
+		this.model = model;
+		this.color = color;
+		this.registerNumber = registerNumber;
+		this.year = year;
+		this.price = price;
 	}
 
 	public Car(String brand, String model, String color, String registerNumber, int year, int price, Owner owner) {
@@ -38,6 +48,14 @@ public class Car {
 		this.year = year;
 		this.price = price;
 		this.owner = owner;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getBrand() {
@@ -101,6 +119,5 @@ public class Car {
 		return "Car [id=" + id + ", brand=" + brand + ", model=" + model + ", color=" + color + ", registerNumber="
 				+ registerNumber + ", year=" + year + ", price=" + price + ", owner=" + owner + "]";
 	}
-
 
 }
