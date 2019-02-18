@@ -1,5 +1,8 @@
 package com.packt.cardatabase.domain;
-
+/*
+Simple POJO class to keep credentials for authentication.
+This class doesn't have the @Entity annotation because we don't have to save credentials to the database. 
+ */
 public class AccountCredentials {
 	
 	private String username;
