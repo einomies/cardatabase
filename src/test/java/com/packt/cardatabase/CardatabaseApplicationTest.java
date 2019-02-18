@@ -12,7 +12,7 @@ import com.packt.cardatabase.web.CarController;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CardatabaseApplicationTests {
+public class CardatabaseApplicationTest {
 
 	@Autowired
 	private CarController controller;
