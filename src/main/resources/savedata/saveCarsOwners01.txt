@@ -10,4 +10,4 @@ Volkswagen	Passat	Brown	DFU-208	2017	28500	8
 Lada	Samara 1600	Green	WTF-632	2009	856	1
 Peugeot	5008	Silver	GKM-802	2017	31000	7
 Ford	Mondeo	Brown	BDK-126	2018	26000	9
-Kia	Optima	Silver	JWT-420	2019	35900	9
+Kia	Optima	Silver	JWT-420	2019	39900	9

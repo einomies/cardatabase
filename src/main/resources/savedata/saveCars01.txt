@@ -9,4 +9,4 @@ Nissan	Leaf	White	SSJ-3012	2014	29000
 Volkswagen	Passat	Brown	DFU-208	2017	28500
 Lada	Samara 1600	Green	WTF-632	2009	856
 Peugeot	5008	Silver	GKM-802	2017	31000
-Kia	Optima	Silver	JWT-420	2019	35900
+Kia	Optima	Silver	JWT-420	2019	39900
